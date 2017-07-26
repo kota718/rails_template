@@ -68,11 +68,20 @@ end
 
 run 'curl -s https://raw.githubusercontent.com/svenfuchs/rails-i18n/master/rails/locale/ja.yml -o config/locales/ja.yml'
 run 'curl -s https://raw.githubusercontent.com/svenfuchs/rails-i18n/master/rails/locale/en.yml -o config/locales/en.yml'
+run 'curl -s https://raw.githubusercontent.com/kota718/rails_template/master/config/initializers/generators.rb -o config/initializers/generators.rb'
+run 'curl -s https://raw.githubusercontent.com/kota718/rails_template/master/config/initializers/locales.rb -o config/initializers/locales.rb'
+run 'curl -s https://raw.githubusercontent.com/kota718/rails_template/master/config/initializers/timezone.rb -o config/initializers/timezone.rb'
 
 
 generate 'simple_form:install --bootstrap'
 generate 'draper:install'
 generate 'rspec:install'
+
+run 'curl -s https://raw.githubusercontent.com/kota718/rails_template/master/spec/turnip_helper.rb -o spec/turnip_helper.rb'
+run 'curl -s https://raw.githubusercontent.com/kota718/rails_template/master/spec/support/capybara.rb -o spec/support/capybara.rb'
+run 'curl -s https://raw.githubusercontent.com/kota718/rails_template/master/spec/support/database_revinder.rb -o spec/support/database_revinder.rb'
+run 'curl -s https://raw.githubusercontent.com/kota718/rails_template/master/spec/support/factory_girl.rb -o spec/support/factory_girl.rb'
+run 'curl -s https://raw.githubusercontent.com/kota718/rails_template/master/spec/support/shoulda_matchers.rb -o spec/support/shoulda_matchers.rb'
 
 run 'rm -rf db/seed.rb'
 run 'mkdir -p db/fixtures/test'
