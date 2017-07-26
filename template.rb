@@ -92,18 +92,18 @@ run 'touch db/fixtures/production/.keep'
 
 gsub_file 'spec/rails_helper.rb', "# Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }", "Dir[Rails.root.join('spec', 'support', '**', '*', '.rb')].each { |f| require f }"
 
-insert_into_file '.rspec', <<-EOL
+inject_into_file '.rspec', <<-EOL
 --color 
 -f d 
 -r turnip/rspec
 EOL
 
-insert_into_file 'config/application.rb', %(
+inject_into_file 'config/application.rb', %(
   config.time_zone = 'Tokyo'
   config.active_record.default_timezone = :local
 ), after: 'config.generators.system_tests = nil'
 
-insert_into_file 'config/environments/development.rb',%(
+inject_into_file 'config/environments/development.rb',%(
   config.after_initialize do
     Bullet.enable = true
     Bullet.bullet_logger = true
@@ -112,7 +112,7 @@ insert_into_file 'config/environments/development.rb',%(
   end
 ), after: 'config.assets.debug = true'
 
-insert_into_file 'config/boot.rb',%(
+inject_into_file 'config/boot.rb',%(
   if ENV['RAILS_ENV'] == 'development'
     require 'bootsnap'
     Bootsnap.setup(
