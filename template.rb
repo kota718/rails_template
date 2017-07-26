@@ -79,7 +79,7 @@ generate 'rspec:install'
 
 run 'curl -s https://raw.githubusercontent.com/kota718/rails_template/master/spec/turnip_helper.rb -o spec/turnip_helper.rb'
 run 'curl -s https://raw.githubusercontent.com/kota718/rails_template/master/spec/support/capybara.rb -o spec/support/capybara.rb'
-run 'curl -s https://raw.githubusercontent.com/kota718/rails_template/master/spec/support/database_revinder.rb -o spec/support/database_revinder.rb'
+run 'curl -s https://raw.githubusercontent.com/kota718/rails_template/master/spec/support/database_rewinder.rb -o spec/support/database_rewinder.rb'
 run 'curl -s https://raw.githubusercontent.com/kota718/rails_template/master/spec/support/factory_girl.rb -o spec/support/factory_girl.rb'
 run 'curl -s https://raw.githubusercontent.com/kota718/rails_template/master/spec/support/shoulda_matchers.rb -o spec/support/shoulda_matchers.rb'
 
