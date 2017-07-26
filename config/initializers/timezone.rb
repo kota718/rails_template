@@ -1,2 +1,4 @@
-config.time_zone = 'Tokyo'
-config.active_record.default_timezone = :local
+Rails.application.config do |c|
+  c.time_zone = 'Tokyo'
+  c.active_record.default_timezone = :local
+end
