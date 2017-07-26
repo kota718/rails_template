@@ -71,8 +71,6 @@ run 'curl -s https://raw.githubusercontent.com/svenfuchs/rails-i18n/master/rails
 run 'curl -s https://raw.githubusercontent.com/svenfuchs/rails-i18n/master/rails/locale/en.yml -o config/locales/en.yml'
 run 'curl -s https://raw.githubusercontent.com/kota718/rails_template/master/config/initializers/generators.rb -o config/initializers/generators.rb'
 run 'curl -s https://raw.githubusercontent.com/kota718/rails_template/master/config/initializers/locales.rb -o config/initializers/locales.rb'
-run 'curl -s https://raw.githubusercontent.com/kota718/rails_template/master/config/initializers/timezone.rb -o config/initializers/timezone.rb'
-
 
 generate 'simple_form:install --bootstrap'
 generate 'draper:install'
@@ -99,6 +97,11 @@ insert_into_file '.rspec', <<-EOL
 -f d 
 -r turnip/rspec
 EOL
+
+insert_into_file 'config/application.rb', %(
+  config.time_zone = 'Tokyo'
+  config.active_record.default_timezone = :local
+), after: 'config.generators.system_tests = nil'
 
 insert_into_file 'config/environments/development.rb',%(
   config.after_initialize do
