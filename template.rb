@@ -24,6 +24,7 @@ CODE
 gem_group :development do
   gem 'bullet'
   gem 'overcommit', require: false
+  gem 'bootsnap'
 end
 
 
