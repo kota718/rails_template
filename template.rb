@@ -11,7 +11,6 @@ ruby '#{ruby_version}'), after: "source 'https://rubygems.org'"
 run "echo '#{ruby_version}' > ./.ruby-version"
 
 # add to Gemfile
-append_file 'Gemfile', <<-CODE
 gem 'bootstrap-sass'
 gem 'bootswatch-rails'
 gem 'font-awesome-rails'
@@ -19,7 +18,6 @@ gem 'slim-rails'
 gem 'simple_form'
 gem 'seed-fu'
 gem 'draper'
-CODE
 
 gem_group :development do
   gem 'bullet'
